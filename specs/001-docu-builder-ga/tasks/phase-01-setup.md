@@ -219,8 +219,8 @@ Before any card, read [IMPLEMENTER.md](../IMPLEMENTER.md). It defines the abbrev
 2. Add a header comment with the `.env` values that match: `DATABASE_URL=postgresql+asyncpg://docu:docu@localhost:5432/docu`, `REDIS_URL=redis://localhost:6379/0`, and the S3 endpoint `http://localhost:9000`.
 
 **Acceptance**:
-- [ ] `docker compose -f infra/compose.yaml up -d` brings every service to healthy within 2 min (ClamAV may take longer on first run while it downloads signatures; this is noted in the comment)
-- [ ] `psql postgresql://docu:docu@localhost:5432/docu -c "create extension if not exists vector"` succeeds
+- [x] `docker compose -f infra/compose.yaml up -d` brings every service to healthy within 2 min (ClamAV may take longer on first run while it downloads signatures; this is noted in the comment)
+- [x] `psql postgresql://docu:docu@localhost:5432/docu -c "create extension if not exists vector"` succeeds
 
 **Verify**: `docker compose -f infra/compose.yaml ps`
 

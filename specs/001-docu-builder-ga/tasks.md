@@ -27,7 +27,7 @@
 - [x] [T003](tasks/phase-01-setup.md#t003) [P] Port settings with MA's env names (`UPSTREAM`, `UPSTREAM_API_KEY`, `MODEL`, `VISION_MODEL`, `CONTEXT_WINDOW`, `MAX_COMPLETION_TOKENS`, `ENABLE_THINKING`, `SECRET_KEY`, `FIRST_USER_IS_ADMIN`, …) and its nested settings and hoist pattern from `MA/src/agent_console/config/`, into `BE/core/config.py`. Also port `ENV.md` and `.env.example`.
 - [x] [T004](tasks/phase-01-setup.md#t004) [P] Port the prompts loader (`load_prompt` with variables, cached per process) from `MA/src/agent_console/prompts.py` to `BE/core/prompts.py`
 - [x] [T005](tasks/phase-01-setup.md#t005) [P] Port `BlobStore` (Protocol, Local, S3) from `MA/src/agent_console/storage/blob_store.py` to `BE/storage/blob_store.py`, with its tests
-- [ ] [T006](tasks/phase-01-setup.md#t006) [P] Create the local stack (Postgres 16 + pgvector, Redis 7, MinIO, Mailpit, ClamAV) in `infra/compose.yaml`
+- [x] [T006](tasks/phase-01-setup.md#t006) [P] Create the local stack (Postgres 16 + pgvector, Redis 7, MinIO, Mailpit, ClamAV) in `infra/compose.yaml`
 - [x] [T007](tasks/phase-01-setup.md#t007) [P] Port the frontend base from `MA/frontend` into `frontend/apps/web`:
   - Vite, Tailwind 4, react-router 7, TanStack Query, i18next with `en.json` and `ar.json`
   - AppShell, NavRail, LanguageToggle, ConfirmDialog, `useTheme`, `useLocalSetting`

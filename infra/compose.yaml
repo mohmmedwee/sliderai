@@ -1,8 +1,13 @@
 # Local stack for Docu Builder.
-# Matching env (see backend/.env.example):
-#   DATABASE_URL=postgresql+asyncpg://docu:docu@localhost:5432/docu
-#   REDIS_URL=redis://localhost:6379/0
+# Host ports are overridable so this stack can run beside other projects.
+# Defaults are the card ports. infra/.env (gitignored) sets the local overrides:
+#   DOCU_DB_PORT=5442 DOCU_REDIS_PORT=6389
+# Matching env (see backend/.env.example). With the local overrides:
+#   DATABASE_URL=postgresql+asyncpg://docu:docu@localhost:5442/docu
+#   REDIS_URL=redis://localhost:6389/0
 #   S3 endpoint http://localhost:9000 (bucket docu, keys minio / minio12345)
+# Also overridable: DOCU_MINIO_PORT (9000), DOCU_MINIO_CONSOLE_PORT (9001),
+# DOCU_MAILPIT_SMTP_PORT (1025), DOCU_MAILPIT_UI_PORT (8025), DOCU_CLAMAV_PORT (3310).
 # ClamAV downloads signatures on first start and can take several minutes
 # before its healthcheck passes. The other services should be healthy within 2 minutes.
 
@@ -16,7 +21,7 @@ services:
       POSTGRES_PASSWORD: docu
       POSTGRES_DB: docu
     ports:
-      - "5432:5432"
+      - "${DOCU_DB_PORT:-5432}:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -28,7 +33,7 @@ services:
   redis:
     image: redis:7-alpine
     ports:
-      - "6379:6379"
+      - "${DOCU_REDIS_PORT:-6379}:6379"
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
@@ -43,8 +48,8 @@ services:
       MINIO_ROOT_USER: minio
       MINIO_ROOT_PASSWORD: minio12345
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - "${DOCU_MINIO_PORT:-9000}:9000"
+      - "${DOCU_MINIO_CONSOLE_PORT:-9001}:9001"
     volumes:
       - miniodata:/data
 
@@ -62,15 +67,15 @@ services:
   mailpit:
     image: axllent/mailpit
     ports:
-      - "1025:1025"
-      - "8025:8025"
+      - "${DOCU_MAILPIT_SMTP_PORT:-1025}:1025"
+      - "${DOCU_MAILPIT_UI_PORT:-8025}:8025"
 
   clamav:
     # The official tag is amd64-only. Apple Silicon runs it under emulation.
     image: clamav/clamav:stable
     platform: linux/amd64
     ports:
-      - "3310:3310"
+      - "${DOCU_CLAMAV_PORT:-3310}:3310"
     healthcheck:
       test: ["CMD", "clamdcheck.sh"]
       interval: 30s
