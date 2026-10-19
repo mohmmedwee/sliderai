@@ -299,8 +299,8 @@ Before any card, read [IMPLEMENTER.md](../IMPLEMENTER.md). It defines the abbrev
 4. Test: the routing map sends `docu.turn` to `turns`.
 
 **Acceptance**:
-- [ ] `uv run celery -A docu.worker.celery_app inspect ping` gets a reply from a running worker
-- [ ] The routing test passes
+- [x] `uv run celery -A docu.worker.celery_app inspect ping` gets a reply from a running worker
+- [x] The routing test passes
 
 **Verify**: `uv run pytest tests/unit/test_celery_config.py -q`
 
