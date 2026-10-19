@@ -1,0 +1,83 @@
+# Local stack for Docu Builder.
+# Matching env (see backend/.env.example):
+#   DATABASE_URL=postgresql+asyncpg://docu:docu@localhost:5432/docu
+#   REDIS_URL=redis://localhost:6379/0
+#   S3 endpoint http://localhost:9000 (bucket docu, keys minio / minio12345)
+# ClamAV downloads signatures on first start and can take several minutes
+# before its healthcheck passes. The other services should be healthy within 2 minutes.
+
+name: docu
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: docu
+      POSTGRES_PASSWORD: docu
+      POSTGRES_DB: docu
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U docu -d docu"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  minio:
+    # minio/minio left Docker Hub in September 2026 and Quay now requires a login.
+    image: cgr.dev/chainguard/minio:latest
+    command: server /data --console-address :9001
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio12345
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - miniodata:/data
+
+  minio-init:
+    # minio/mc left Docker Hub; this mirror still has a shell for the bootstrap.
+    image: netiedge/minio-mc:RELEASE.2025-01-17T23-25-50Z
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      until mc alias set local http://minio:9000 minio minio12345; do sleep 2; done &&
+      mc mb --ignore-existing local/docu
+      "
+
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+  clamav:
+    # The official tag is amd64-only. Apple Silicon runs it under emulation.
+    image: clamav/clamav:stable
+    platform: linux/amd64
+    ports:
+      - "3310:3310"
+    healthcheck:
+      test: ["CMD", "clamdcheck.sh"]
+      interval: 30s
+      timeout: 10s
+      retries: 20
+      start_period: 120s
+
+volumes:
+  pgdata:
+  miniodata:
