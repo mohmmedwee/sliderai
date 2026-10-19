@@ -370,7 +370,7 @@ export function Slide(props: SlideProps): JSX.Element
 2. `audit_log` has the columns listed in data-model.md, with the index `(workspace_id, created_at desc)`.
 
 **Acceptance**:
-- [ ] The models import, and their columns match data-model.md
+- [x] The models import, and their columns match data-model.md
 
 **Verify**: covered by T024 and T038
 
