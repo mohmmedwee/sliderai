@@ -35,7 +35,7 @@
 - [x] [T008](tasks/phase-01-setup.md#t008) [P] Scaffold the FastAPI app factory: health, readiness, lifespan, and serving `web/dist` in single-host mode (as in `MA/src/agent_console/main.py`), in `BE/api/app.py`
 - [x] [T009](tasks/phase-01-setup.md#t009) [P] Scaffold Celery with queues `turns`, `files`, `exports`, and `default`, routing, and beat, in `BE/worker/celery_app.py`
 - [ ] [T010](tasks/phase-01-setup.md#t010) [P] Port `scripts/check_endpoint.py`, which checks a plain reply, `tool_calls`, and `tool_calls` while streaming, to `BE/scripts/check_endpoint.py`
-- [ ] [T011](tasks/phase-01-setup.md#t011) [P] Set up Playwright projects `en-desktop`, `ar-desktop`, `en-mobile`, `ar-mobile`, plus Vitest, in `frontend/apps/web/`
+- [x] [T011](tasks/phase-01-setup.md#t011) [P] Set up Playwright projects `en-desktop`, `ar-desktop`, `en-mobile`, `ar-mobile`, plus Vitest, in `frontend/apps/web/`
 - [ ] [T012](tasks/phase-01-setup.md#t012) [P] Add the CI workflow with two jobs:
   - backend: ruff, mypy, unit tests, integration tests
   - frontend: lint, typecheck, Vitest, e2e, build, api-types drift check

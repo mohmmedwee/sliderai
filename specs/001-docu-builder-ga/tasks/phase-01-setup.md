@@ -352,8 +352,8 @@ Before any card, read [IMPLEMENTER.md](../IMPLEMENTER.md). It defines the abbrev
 4. `smoke.spec.ts`: open `/`, and expect `html[dir]` to be `rtl` for the `ar-*` projects and `ltr` otherwise.
 
 **Acceptance**:
-- [ ] `pnpm test` runs (0 tests is OK)
-- [ ] `pnpm test:e2e` passes `smoke.spec.ts` in all 4 projects
+- [x] `pnpm test` runs (0 tests is OK)
+- [x] `pnpm test:e2e` passes `smoke.spec.ts` in all 4 projects
 
 **Verify**: `cd frontend && pnpm test:e2e`
 
