@@ -31,8 +31,8 @@ export function Slide({
   const Layout = layouts[slide.layout]
   const font =
     theme.tokens.font === 'serif'
-      ? '"Noto Naskh Arabic", Fraunces, serif'
-      : '"IBM Plex Sans Arabic", Inter, sans-serif'
+      ? '"Noto Naskh Arabic", Fraunces, Georgia, serif'
+      : '"IBM Plex Sans Arabic", Inter, system-ui, sans-serif'
   return (
     <div className="slide-frame" style={{ width, height: (width * 9) / 16 }}>
       <div

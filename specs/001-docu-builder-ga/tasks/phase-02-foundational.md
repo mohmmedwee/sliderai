@@ -303,7 +303,7 @@ export function Slide(props: SlideProps): JSX.Element
 
 **Acceptance**:
 - [ ] Arabic and Latin text render in the bundled fonts (check in DevTools › Rendered Fonts)
-- [ ] No request goes to Google Fonts at runtime
+- [x] No request goes to Google Fonts at runtime
 
 **Verify**: Manual check in `/__ui`. `grep -r fonts.googleapis frontend/` is empty.
 

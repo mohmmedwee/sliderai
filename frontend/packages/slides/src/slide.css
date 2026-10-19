@@ -1,3 +1,5 @@
+@import './fonts/fonts.css';
+
 .slide-frame {
   position: relative;
   overflow: hidden;

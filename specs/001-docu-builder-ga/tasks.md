@@ -63,7 +63,7 @@
 - [x] [T018](tasks/phase-02-foundational.md#t018) Build the slide renderer: 7 layouts, theme CSS variables, `dir="auto"` per text block, and a scale prop for thumbnails, in `FP/slides/src/{Slide.tsx,layouts/*.tsx,theme.ts}`
 - [x] [T019](tasks/phase-02-foundational.md#t019) [P] Add the SVG chart renderer (bar, line, pie, donut; RTL-aware axes; no runtime chart library) and the table renderer in `FP/slides/src/{charts,table}/`
 - [x] [T020](tasks/phase-02-foundational.md#t020) [P] Add 16 system themes, including MA `skills/theme-factory/themes` (Apache-2.0, with attribution in `NOTICE`), and a contrast test (≥ 4.5:1) in `FP/slides/src/themes.ts` and `FP/slides/tests/contrast.test.ts`
-- [ ] [T021](tasks/phase-02-foundational.md#t021) [P] Bundle the fonts (IBM Plex Sans Arabic, Inter, Noto Naskh Arabic, Fraunces) in `FP/slides/src/fonts.css`
+- [x] [T021](tasks/phase-02-foundational.md#t021) [P] Bundle the fonts (IBM Plex Sans Arabic, Inter, Noto Naskh Arabic, Fraunces) in `FP/slides/src/fonts.css`
 
 ### Database
 
