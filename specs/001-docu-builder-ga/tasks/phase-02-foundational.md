@@ -347,9 +347,9 @@ export function Slide(props: SlideProps): JSX.Element
 7. `platform_settings` is a single row: `id: int = 1` with `CheckConstraint("id = 1")`.
 
 **Acceptance**:
-- [ ] Every column in data-model.md exists with the right type and nullability
+- [x] Every column in data-model.md exists with the right type and nullability
 - [ ] `uv run alembic revision --autogenerate` (in T024) produces the tables with no surprises
-- [ ] `mypy --strict` is clean
+- [x] `mypy --strict` is clean
 
 **Verify**: `uv run python -c "import docu.db.models as m; print(len(m.Base.metadata.tables))"` prints 18 or more
 
