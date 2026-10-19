@@ -149,8 +149,8 @@ export type TurnEvent = Schemas['TurnEvent'] // or the generated union name; che
 5. Add `FE/stores/workspace.ts` (Zustand, persisted in localStorage under `docu.workspace`): `{workspaceId: string | null, setWorkspace(id)}`.
 
 **Acceptance**:
-- [ ] `pnpm gen:api` regenerates with no diff on a clean tree
-- [ ] `pnpm typecheck` passes using `paths['/v1/health']['get']`
+- [x] `pnpm gen:api` regenerates with no diff on a clean tree
+- [x] `pnpm typecheck` passes using `paths['/v1/health']['get']`
 
 **Verify**: `cd frontend && pnpm gen:api && git diff --exit-code packages/api-types && pnpm typecheck`
 

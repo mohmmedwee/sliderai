@@ -8,6 +8,6 @@
     "typecheck": "pnpm --filter web typecheck",
     "test": "pnpm --filter web test",
     "test:e2e": "pnpm --filter web test:e2e",
-    "gen:api": "pnpm --filter web gen:api"
+    "gen:api": "cd ../backend && uv run python -m docu.scripts.dump_openapi > ../frontend/packages/api-types/openapi.json && cd ../frontend/packages/api-types && npx openapi-typescript openapi.json -o src/schema.d.ts"
   }
 }

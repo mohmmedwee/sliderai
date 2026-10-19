@@ -10,6 +10,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@docu/api-types':
+        specifier: workspace:*
+        version: link:../../packages/api-types
       '@tailwindcss/vite':
         specifier: ^4.3.3
         version: 4.3.3(vite@8.3.4(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0))
@@ -96,7 +99,11 @@ importers:
         specifier: ^3.2.4
         version: 3.2.7(@types/node@24.19.2)(jiti@2.7.0)(jsdom@27.4.0(supports-color@10.2.2))(lightningcss@1.33.0)(supports-color@10.2.2)
 
-  packages/api-types: {}
+  packages/api-types:
+    devDependencies:
+      openapi-typescript:
+        specifier: ^7.10.0
+        version: 7.13.0(typescript@6.0.3)
 
   packages/slides: {}
 
@@ -2219,7 +2226,7 @@ snapshots:
       '@babel/code-frame': 7.29.7
       '@babel/generator': 7.29.8
       '@babel/helper-compilation-targets': 7.29.7
-      '@babel/helper-module-transforms': 7.29.7(@babel/core@7.29.7)
+      '@babel/helper-module-transforms': 7.29.7(@babel/core@7.29.7(supports-color@10.2.2))
       '@babel/helpers': 7.29.10
       '@babel/parser': 7.29.9
       '@babel/template': 7.29.7
@@ -2259,7 +2266,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/helper-module-transforms@7.29.7(@babel/core@7.29.7)':
+  '@babel/helper-module-transforms@7.29.7(@babel/core@7.29.7(supports-color@10.2.2))':
     dependencies:
       '@babel/core': 7.29.7(supports-color@10.2.2)
       '@babel/helper-module-imports': 7.29.7
