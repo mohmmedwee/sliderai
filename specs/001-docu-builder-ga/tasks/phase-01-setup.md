@@ -321,7 +321,7 @@ Before any card, read [IMPLEMENTER.md](../IMPLEMENTER.md). It defines the abbrev
 2. Expose `async def run_checks(settings) -> dict[str, bool | str]` (T219 reuses it for the admin "Check connection" button). The CLI prints ✓/✗ per check and exits 1 on any failure.
 
 **Acceptance**:
-- [ ] `uv run python -m docu.scripts.check_endpoint` against a working upstream prints three ✓ and exits 0
+- [x] `uv run python -m docu.scripts.check_endpoint` against a working upstream prints three ✓ and exits 0
 - [x] With a wrong key it prints ✗ with a short reason and exits 1
 
 **Verify**: run it manually (it needs a real upstream, so it is not in CI)
