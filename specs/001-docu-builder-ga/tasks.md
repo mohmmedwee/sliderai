@@ -70,7 +70,7 @@
 - [x] [T022](tasks/phase-02-foundational.md#t022) Write SQLAlchemy models for `users` (self-hosted auth columns), `sessions`, `identities`, `auth_tokens`, `workspaces`, `memberships`, `documents`, `document_revisions`, `threads`, `messages`, `turns`, `pending_inputs`, `themes`, `templates`, `prompt_versions`, and `platform_settings`, in `BE/db/models/*.py`
 - [x] [T023](tasks/phase-02-foundational.md#t023) Write SQLAlchemy models for `credit_ledger` and `audit_log` in `BE/db/models/{ledger,audit}.py`
 - [x] [T024](tasks/phase-02-foundational.md#t024) Write the initial Alembic migration: extensions, tables, the append-only ledger trigger, and RLS policies on tenant tables, in `backend/alembic/versions/0001_initial.py`
-- [ ] [T025](tasks/phase-02-foundational.md#t025) Add the `scoped_session(workspace_id)` dependency (`SET LOCAL app.workspace_id`). Repositories take `user_id` and `workspace_id` in every signature (MA rule). In `BE/db/session.py` and `BE/db/repositories/`.
+- [x] [T025](tasks/phase-02-foundational.md#t025) Add the `scoped_session(workspace_id)` dependency (`SET LOCAL app.workspace_id`). Repositories take `user_id` and `workspace_id` in every signature (MA rule). In `BE/db/session.py` and `BE/db/repositories/`.
 - [ ] [T026](tasks/phase-02-foundational.md#t026) [P] Write the RLS isolation integration test in `BT/integration/test_rls.py`
 - [ ] [T027](tasks/phase-02-foundational.md#t027) [P] Add a seed script for themes, 24 bilingual templates, and the built-in skills sync in `BE/scripts/seed.py`
 - [ ] [T028](tasks/phase-02-foundational.md#t028) Add the LangGraph setup script (`AsyncPostgresSaver.setup()` and `AsyncPostgresStore.setup()`) in `BE/scripts/setup_langgraph.py`

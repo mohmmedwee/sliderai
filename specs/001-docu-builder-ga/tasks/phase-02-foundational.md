@@ -470,7 +470,7 @@ async def list_recent(s: AsyncSession, *, workspace_id: UUID, limit: int, cursor
 
 **Acceptance**:
 - [ ] `scoped_session` sets the GUC per transaction (verified in T026)
-- [ ] The API guard test passes
+- [x] The API guard test passes
 
 **Verify**: `uv run pytest tests/unit/test_no_system_session_in_api.py -q`
 
