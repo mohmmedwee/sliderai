@@ -135,10 +135,10 @@ Before any card, read [IMPLEMENTER.md](../IMPLEMENTER.md). It defines the abbrev
 **Drop**: every Work/Cleverso/run_python field.
 
 **Acceptance**:
-- [ ] `from docu.core.config import get_settings; get_settings().llm.context_window` works
-- [ ] MA field names are kept (`settings.llm.*`, `settings.agent.*`, `settings.skills.max_chars`, `settings.prompts.dir`)
-- [ ] `.env.example` contains every field, with no real secrets
-- [ ] Tests pass
+- [x] `from docu.core.config import get_settings; get_settings().llm.context_window` works
+- [x] MA field names are kept (`settings.llm.*`, `settings.agent.*`, `settings.skills.max_chars`, `settings.prompts.dir`)
+- [x] `.env.example` contains every field, with no real secrets
+- [x] Tests pass
 
 **Verify**: `cd backend && uv run pytest tests/unit/test_settings.py -q`
 
