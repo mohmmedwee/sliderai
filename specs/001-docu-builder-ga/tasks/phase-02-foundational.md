@@ -226,7 +226,7 @@ export function Slide(props: SlideProps): JSX.Element
 7. Tests: tick generation (0–97 gives `[0,20,40,60,80,100]`), the RTL order flips, and the pie sums to 360°.
 
 **Acceptance**:
-- [ ] No chart library dependency is added
+- [x] No chart library dependency is added
 - [ ] Charts render correctly in the `/__ui` slides section in both directions
 
 **Verify**: `pnpm --filter slides test`
