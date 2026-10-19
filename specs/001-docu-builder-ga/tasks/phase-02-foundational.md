@@ -114,8 +114,8 @@ class DocumentState(ApiModel):
 7. Tests: every event round-trips through `turn_event_adapter` JSON, an unknown `type` fails, and a 65-option `AskUserEvent` fails.
 
 **Acceptance**:
-- [ ] `/v1/openapi.json` contains every event model under `components.schemas`
-- [ ] The names and fields match contracts/sse-events.md exactly
+- [x] `/v1/openapi.json` contains every event model under `components.schemas`
+- [x] The names and fields match contracts/sse-events.md exactly
 
 **Verify**: `uv run pytest tests/unit/test_events.py -q && uv run python -c "from docu.api.app import create_app; import json; s=create_app().openapi(); assert 'DocPatchEvent' in s['components']['schemas']"`
 

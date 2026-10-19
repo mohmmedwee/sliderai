@@ -13,6 +13,7 @@ from redis.asyncio import Redis
 from sqlalchemy.ext.asyncio import create_async_engine
 
 from docu.api.routers.health import router as health_router
+from docu.api.routers.schema_registry import router as schema_router
 from docu.core.config import get_settings
 from docu.storage.blob_store import build_blob_store
 
@@ -47,6 +48,7 @@ def create_app() -> FastAPI:
     settings = get_settings()
     app = FastAPI(lifespan=_lifespan)
     app.include_router(health_router)
+    app.include_router(schema_router)
     if settings.storage.file_storage == "local":
         app.add_api_route("/v1/_local-upload/{key:path}", _local_upload, methods=["PUT"])
     index = _spa_index()
