@@ -2,7 +2,7 @@
 
 **Input**: Design documents from `/specs/001-docu-builder-ga/`
 **Prerequisites**: plan.md, spec.md, **ux.md** (every UI task), research.md (Part A covers what is carried over from agent_console), data-model.md, contracts/, quickstart.md
-**How to work a task**: read [IMPLEMENTER.md](./IMPLEMENTER.md), then the task's card in [tasks/](./tasks/), linked from each ID below.
+**How to work a task**: this file is only the index. **The implementation details for every task are in its card in the [tasks/](./tasks/) folder**, one file per phase (`tasks/phase-NN-*.md`). Click a task ID to open its card. Read [IMPLEMENTER.md](./IMPLEMENTER.md) once, then for each task follow its card: Depends on, Read first, Files, Steps, Acceptance, and Verify. Don't implement from the one-line summary here.
 **Stack**: A Python 3.12 backend (FastAPI, LangChain + LangGraph, SQLAlchemy, Celery) and a React 19 / TypeScript frontend, built on agent_console (`~/Documents/myproject/my_agent`, shortened to `MA`)
 
 **Tests**: Required by the constitution (Principle V) for reducers, loop guards, interrupt/resume, the permissions matrix, the credit ledger, Stripe webhooks, and the turn lifecycle. Write those tests first and confirm they fail. Every story has Playwright e2e tests in both `ar` and `en`.
@@ -18,10 +18,12 @@
 
 ## Phase 1: Setup (Shared Infrastructure)
 
+**Implementation cards for this phase**: [tasks/phase-01-setup.md](./tasks/phase-01-setup.md)
+
 **Purpose**: Repository layout, plus the scaffolding ported from agent_console
 
 - [x] [T001](tasks/phase-01-setup.md#t001) Create the repo layout from plan.md: `backend/` (uv project `docu`, `src/` layout, `prompts/`, `skills/`), `frontend/` (pnpm workspace: `apps/web`, `packages/{slides,api-types}`), `evals/`, and `infra/`
-- [ ] [T002](tasks/phase-01-setup.md#t002) [P] Set up backend tooling: ruff (MA rule set), mypy strict, pytest with MA's markers (`db`, `slow`, `e2e_*`), pre-commit, in `backend/pyproject.toml`
+- [x] [T002](tasks/phase-01-setup.md#t002) [P] Set up backend tooling: ruff (MA rule set), mypy strict, pytest with MA's markers (`db`, `slow`, `e2e_*`), pre-commit, in `backend/pyproject.toml`
 - [ ] [T003](tasks/phase-01-setup.md#t003) [P] Port settings with MA's env names (`UPSTREAM`, `UPSTREAM_API_KEY`, `MODEL`, `VISION_MODEL`, `CONTEXT_WINDOW`, `MAX_COMPLETION_TOKENS`, `ENABLE_THINKING`, `SECRET_KEY`, `FIRST_USER_IS_ADMIN`, …) and its nested settings and hoist pattern from `MA/src/agent_console/config/`, into `BE/core/config.py`. Also port `ENV.md` and `.env.example`.
 - [ ] [T004](tasks/phase-01-setup.md#t004) [P] Port the prompts loader (`load_prompt` with variables, cached per process) from `MA/src/agent_console/prompts.py` to `BE/core/prompts.py`
 - [ ] [T005](tasks/phase-01-setup.md#t005) [P] Port `BlobStore` (Protocol, Local, S3) from `MA/src/agent_console/storage/blob_store.py` to `BE/storage/blob_store.py`, with its tests
@@ -44,6 +46,8 @@
 ---
 
 ## Phase 2: Foundational (Blocking Prerequisites)
+
+**Implementation cards for this phase**: [tasks/phase-02-foundational.md](./tasks/phase-02-foundational.md)
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
@@ -120,6 +124,8 @@
 
 ## Phase 3: User Story 1 - Create a deck from one prompt (Priority: P1) 🎯 MVP
 
+**Implementation cards for this phase**: [tasks/phase-03-us1.md](./tasks/phase-03-us1.md)
+
 **Goal**: The agent_console loop, rebuilt on LangGraph, drafts a themed deck that streams into the editor. It includes clarifying questions, approvals, thinking blocks, and loop guards.
 
 **Independent Test**: quickstart.md › US1 and "Agent behavior" steps 1, 2, and 5
@@ -194,6 +200,8 @@
 
 ## Phase 4: User Story 2 - Refine by conversation and by hand (Priority: P1)
 
+**Implementation cards for this phase**: [tasks/phase-04-us2.md](./tasks/phase-04-us2.md)
+
 **Goal**: Local edits, inline editing, undo, rewind, version history, approval before overwriting manual edits, Conversations, Documents, and Present
 
 **Independent Test**: quickstart.md › US2 and "Agent behavior" steps 3 and 4
@@ -231,6 +239,8 @@
 
 ## Phase 5: User Story 3 - Templates and themes (Priority: P2)
 
+**Implementation cards for this phase**: [tasks/phase-05-us3.md](./tasks/phase-05-us3.md)
+
 - [ ] [T111](tasks/phase-05-us3.md#t111) [P] [US3] Write integration tests for template facets and filters in `BT/integration/test_templates.py`
 - [ ] [T112](tasks/phase-05-us3.md#t112) [P] [US3] Create the template-following eval (20 cases) in `evals/datasets/templates.jsonl`
 - [ ] [T113](tasks/phase-05-us3.md#t113) [US3] Add the template and theme routes (facets, save as a workspace template, delete) in `BE/api/routers/{templates,themes}.py`
@@ -246,6 +256,8 @@
 ---
 
 ## Phase 6: User Story 4 - Accounts, workspaces, and roles (Priority: P2)
+
+**Implementation cards for this phase**: [tasks/phase-06-us4.md](./tasks/phase-06-us4.md)
 
 ### Tests ⚠️
 
@@ -275,6 +287,8 @@
 
 ## Phase 7: User Story 5 - Share and present via link (Priority: P2)
 
+**Implementation cards for this phase**: [tasks/phase-07-us5.md](./tasks/phase-07-us5.md)
+
 - [ ] [T140](tasks/phase-07-us5.md#t140) [P] [US5] Write sharing integration tests in `BT/integration/test_sharing.py`
 - [ ] [T141](tasks/phase-07-us5.md#t141) [US5] Add the `share_links` model and the sharing service in `BE/db/models/share.py` and `BE/services/sharing.py`
 - [ ] [T142](tasks/phase-07-us5.md#t142) [US5] Add the sharing routes in `BE/api/routers/sharing.py`
@@ -287,6 +301,8 @@
 ---
 
 ## Phase 8: User Story 6 - Attachments, import, and data slides (Priority: P3)
+
+**Implementation cards for this phase**: [tasks/phase-08-us6.md](./tasks/phase-08-us6.md)
 
 - [ ] [T148](tasks/phase-08-us6.md#t148) [P] [US6] Write unit tests for the Arabic-aware splitter in `BT/unit/test_splitter.py`
 - [ ] [T149](tasks/phase-08-us6.md#t149) [P] [US6] Write integration tests for the attachment pipeline (states, EICAR test file, parse error, limits) in `BT/integration/test_attachments.py`
@@ -307,6 +323,8 @@
 
 ## Phase 9: User Story 7 - Export (Priority: P3)
 
+**Implementation cards for this phase**: [tasks/phase-09-us7.md](./tasks/phase-09-us7.md)
+
 - [ ] [T162](tasks/phase-09-us7.md#t162) [P] [US7] Add visual snapshot tests (7 layouts × 4 themes × ar/en) in `BT/integration/test_export_visual.py`
 - [ ] [T163](tasks/phase-09-us7.md#t163) [P] [US7] Write PPTX tests (editable text, RTL, native tables, native charts) in `BT/unit/test_pptx.py`
 - [ ] [T164](tasks/phase-09-us7.md#t164) [US7] Add the `exports` model and routes in `BE/db/models/exports.py` and `BE/api/routers/exports.py`
@@ -319,6 +337,8 @@
 
 ## Phase 10: User Story 8 - Images on slides (Priority: P3)
 
+**Implementation cards for this phase**: [tasks/phase-10-us8.md](./tasks/phase-10-us8.md)
+
 - [ ] [T169](tasks/phase-10-us8.md#t169) [P] [US8] Write `generate_image` tests (approval card shows the cost, moderation, credits, provider error) in `BT/unit/test_image_tool.py`
 - [ ] [T170](tasks/phase-10-us8.md#t170) [US8] Add the `assets` model and the image provider adapter in `BE/db/models/assets.py` and `BE/agent/images/provider.py`
 - [ ] [T171](tasks/phase-10-us8.md#t171) [US8] Implement the `generate_image` tool (policy `ask`) in `BE/agent/tools/image.py`
@@ -329,6 +349,8 @@
 ---
 
 ## Phase 11: User Story 9 - Plans, credits, billing (Priority: P3)
+
+**Implementation cards for this phase**: [tasks/phase-11-us9.md](./tasks/phase-11-us9.md)
 
 - [ ] [T175](tasks/phase-11-us9.md#t175) [P] [US9] Write Stripe webhook tests in `BT/integration/test_stripe_webhooks.py`
 - [ ] [T176](tasks/phase-11-us9.md#t176) [P] [US9] Write plan gating tests (watermark, images, attachments, workspace skills, effort caps) in `BT/integration/test_plans.py`
@@ -347,6 +369,8 @@
 ---
 
 ## Phase 12: User Story 10 - Memory and brand (Priority: P2)
+
+**Implementation cards for this phase**: [tasks/phase-12-us10.md](./tasks/phase-12-us10.md)
 
 **Independent Test**: quickstart.md › US10
 
@@ -367,6 +391,8 @@
 
 ## Phase 13: User Story 11 - Skills (Priority: P3)
 
+**Implementation cards for this phase**: [tasks/phase-13-us11.md](./tasks/phase-13-us11.md)
+
 **Independent Test**: quickstart.md › US11
 
 - [ ] [T196](tasks/phase-13-us11.md#t196) [P] [US11] Write skills tests (index lines, profile and workspace filters, `/skill` forced load, size cap, user skill validation) in `BT/unit/test_skills.py`
@@ -382,6 +408,8 @@
 ---
 
 ## Phase 14: User Story 12 - Connectors (MCP) (Priority: P3)
+
+**Implementation cards for this phase**: [tasks/phase-14-us12.md](./tasks/phase-14-us12.md)
 
 **Independent Test**: quickstart.md › US12
 
@@ -404,6 +432,8 @@
 
 ## Phase 15: User Story 13 - Web research (Priority: P3)
 
+**Implementation cards for this phase**: [tasks/phase-15-us13.md](./tasks/phase-15-us13.md)
+
 **Independent Test**: quickstart.md › US13
 
 - [ ] [T213](tasks/phase-15-us13.md#t213) [P] [US13] Write web tool tests (SSRF guard blocks private ranges, size cap, the toggle hides the tools, citations go into `notes`) in `BT/unit/test_web_tools.py`
@@ -414,6 +444,8 @@
 ---
 
 ## Phase 16: User Story 14 - Platform administration (Priority: P2)
+
+**Implementation cards for this phase**: [tasks/phase-16-us14.md](./tasks/phase-16-us14.md)
 
 **Independent Test**: quickstart.md › US14
 
@@ -430,6 +462,8 @@
 ---
 
 ## Phase 17: Polish, Hardening, and Launch
+
+**Implementation cards for this phase**: [tasks/phase-17-polish.md](./tasks/phase-17-polish.md)
 
 - [ ] [T222](tasks/phase-17-polish.md#t222) [P] Add ⌘K search (MA TODO "Keyboard-first") in `BE/api/routers/search.py` and `FE/components/CommandK.tsx`
 - [ ] [T223](tasks/phase-17-polish.md#t223) [P] Add Schemathesis contract tests in `BT/contract/test_openapi.py`

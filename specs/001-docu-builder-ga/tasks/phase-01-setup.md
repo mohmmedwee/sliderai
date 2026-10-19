@@ -73,8 +73,8 @@ Before any card, read [IMPLEMENTER.md](../IMPLEMENTER.md). It defines the abbrev
 5. `.pre-commit-config.yaml`: ruff (lint and format) and the standard hooks trailing-whitespace, end-of-file-fixer, check-yaml, and check-added-large-files (`--maxkb=500`).
 
 **Acceptance**:
-- [ ] `uv run ruff check . && uv run ruff format --check . && uv run mypy src` passes on the empty package
-- [ ] `uv run pytest` runs and reports "no tests ran" without errors
+- [x] `uv run ruff check . && uv run ruff format --check . && uv run mypy src` passes on the empty package
+- [x] `uv run pytest` runs and reports "no tests ran" without errors
 
 **Verify**: `cd backend && uv run ruff check . && uv run mypy src && uv run pytest -q`
 
