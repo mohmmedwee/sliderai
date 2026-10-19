@@ -188,9 +188,9 @@ Before any card, read [IMPLEMENTER.md](../IMPLEMENTER.md). It defines the abbrev
 3. Port the MA test, and add a local-store round-trip test.
 
 **Acceptance**:
-- [ ] Put, get, and delete round-trip on `LocalBlobStore` in tests
-- [ ] `BlobMissingError` is raised for a missing key
-- [ ] The S3 class is constructed with `moto`-free tests, by mocking `boto3.client`
+- [x] Put, get, and delete round-trip on `LocalBlobStore` in tests
+- [x] `BlobMissingError` is raised for a missing key
+- [x] The S3 class is constructed with `moto`-free tests, by mocking `boto3.client`
 
 **Verify**: `uv run pytest tests/unit/test_blob_store.py -q`
 
