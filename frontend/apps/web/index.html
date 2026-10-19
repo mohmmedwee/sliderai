@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Docu Builder</title>
+    <script>
+      try {
+        if (JSON.parse(localStorage.getItem('docu:theme')) === 'dark') {
+          document.documentElement.classList.add('dark')
+        }
+      } catch {
+        /* ignore unreadable storage */
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

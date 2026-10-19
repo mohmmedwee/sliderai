@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: system-ui, sans-serif;
+  --color-primary: #673cdb;
+  --color-primary-600: #5833ba;
+  --color-error: #f04438;
+  --color-error-500: #d91938;
+  --color-dark: #181819;
+  --color-surface: #ffffff;
+  --color-paper: #f6f5f1;
+  --color-paper-2: #fbfaf7;
+  --color-paper-3: #efede7;
+  --color-line: #e7e4dd;
+  --color-ink: #1c1a24;
+  --color-ink-2: #55525f;
+  --color-rail: #19171f;
+  --color-rail-active: #2e2b38;
+  --color-rail-icon: #a9a5b4;
+}
+
+@layer components {
+  .btn-ghost {
+    @apply inline-flex items-center rounded-xl px-3 py-2 text-sm font-semibold text-ink-2 hover:bg-paper-3;
+  }
+  .btn-primary {
+    @apply inline-flex items-center rounded-xl bg-primary px-3 py-2 text-sm font-semibold text-white hover:bg-primary-600;
+  }
+}

@@ -28,7 +28,7 @@
 - [x] [T004](tasks/phase-01-setup.md#t004) [P] Port the prompts loader (`load_prompt` with variables, cached per process) from `MA/src/agent_console/prompts.py` to `BE/core/prompts.py`
 - [x] [T005](tasks/phase-01-setup.md#t005) [P] Port `BlobStore` (Protocol, Local, S3) from `MA/src/agent_console/storage/blob_store.py` to `BE/storage/blob_store.py`, with its tests
 - [ ] [T006](tasks/phase-01-setup.md#t006) [P] Create the local stack (Postgres 16 + pgvector, Redis 7, MinIO, Mailpit, ClamAV) in `infra/compose.yaml`
-- [ ] [T007](tasks/phase-01-setup.md#t007) [P] Port the frontend base from `MA/frontend` into `frontend/apps/web`:
+- [x] [T007](tasks/phase-01-setup.md#t007) [P] Port the frontend base from `MA/frontend` into `frontend/apps/web`:
   - Vite, Tailwind 4, react-router 7, TanStack Query, i18next with `en.json` and `ar.json`
   - AppShell, NavRail, LanguageToggle, ConfirmDialog, `useTheme`, `useLocalSetting`
   - a dev proxy from `/v1` and `/s` to `:8000`

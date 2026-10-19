@@ -247,9 +247,9 @@ Before any card, read [IMPLEMENTER.md](../IMPLEMENTER.md). It defines the abbrev
 **Drop**: Work pages, `agentSpace.ts`, `mcpCatalog` Cleverso entries, and `cleverso` assets (these return in later tasks only if a card asks).
 
 **Acceptance**:
-- [ ] `cd frontend && pnpm install && pnpm --filter web build` succeeds
-- [ ] `pnpm dev` serves `/`, and switching the language flips `dir` on `<html>`
-- [ ] No "Cleverso" string remains anywhere under `frontend/` (`grep -ri cleverso frontend/apps` is empty)
+- [x] `cd frontend && pnpm install && pnpm --filter web build` succeeds
+- [x] `pnpm dev` serves `/`, and switching the language flips `dir` on `<html>`
+- [x] No "Cleverso" string remains anywhere under `frontend/` (`grep -ri cleverso frontend/apps` is empty)
 
 **Verify**: `cd frontend && pnpm build && ! grep -ri cleverso apps/web/src`
 
