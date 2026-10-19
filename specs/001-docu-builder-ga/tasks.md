@@ -53,7 +53,7 @@
 
 ### Domain models and shared types
 
-- [ ] [T014](tasks/phase-02-foundational.md#t014) Define the Pydantic `Slide` (7 layouts, `table`, `chart`, `notes`), `DocumentContent`, `Theme`, and the `CssField` validator, with camelCase aliases, in `BE/domain/document.py`
+- [x] [T014](tasks/phase-02-foundational.md#t014) Define the Pydantic `Slide` (7 layouts, `table`, `chart`, `notes`), `DocumentContent`, `Theme`, and the `CssField` validator, with camelCase aliases, in `BE/domain/document.py`
 - [ ] [T015](tasks/phase-02-foundational.md#t015) [P] Define the error envelope, codes, and `TurnErrorCode` in `BE/domain/errors.py`
 - [ ] [T016](tasks/phase-02-foundational.md#t016) [P] Define the event union in `BE/domain/events.py`: MA's events (`text_delta`, `reasoning_delta`, `tool_call_delta`, `tool_call`, `tool_approval`, `tool_result`, `status`, `error`, `done`, plus `ask_user`) and the new `doc_patch`, `memory_saved`, `skill_loaded`, `step_limit`, `waiting_input`, and `turn_*` events. Register them in the OpenAPI components.
 - [ ] [T017](tasks/phase-02-foundational.md#t017) Add OpenAPI → TypeScript generation (`pnpm gen:api`) and an `openapi-fetch` client in `FP/api-types/` and `FE/lib/api.ts`

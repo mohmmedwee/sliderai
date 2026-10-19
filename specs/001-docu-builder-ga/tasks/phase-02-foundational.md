@@ -63,8 +63,8 @@ class DocumentState(ApiModel):
 6. Tests: one valid sample per layout. Every error code is hit. `CssField` accepts 6 valid forms and rejects `url(x)`, `red; background:url()`, and `var(--a)`. Round-trip `model_dump(by_alias=True)` gives camelCase.
 
 **Acceptance**:
-- [ ] Every rule in data-model.md › Layout rules is enforced and tested
-- [ ] `mypy --strict` is clean
+- [x] Every rule in data-model.md › Layout rules is enforced and tested
+- [x] `mypy --strict` is clean
 
 **Verify**: `uv run pytest tests/unit/test_document_model.py -q`
 
