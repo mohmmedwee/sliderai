@@ -198,8 +198,8 @@ export function Slide(props: SlideProps): JSX.Element
    - edit mode calls `onSelect` and then `onChange`
 
 **Acceptance**:
-- [ ] All 7 layouts render with the sample slides from `FP/slides/tests/fixtures.ts` (create it: one per layout, in en and ar)
-- [ ] The package has no import from `apps/web`
+- [x] All 7 layouts render with the sample slides from `FP/slides/tests/fixtures.ts` (create it: one per layout, in en and ar)
+- [x] The package has no import from `apps/web`
 - [ ] It looks right in `/__ui` (T045 adds a slides section)
 
 **Verify**: `cd frontend && pnpm --filter slides test`

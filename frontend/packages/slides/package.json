@@ -8,6 +8,16 @@
     "test": "vitest run"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.10.0",
+    "@testing-library/react": "^16.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "jsdom": "^27.4.0",
     "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "@docu/api-types": "workspace:*",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   }
 }
