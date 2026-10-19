@@ -273,9 +273,9 @@ Before any card, read [IMPLEMENTER.md](../IMPLEMENTER.md). It defines the abbrev
 5. Add the dev-only `PUT /v1/_local-upload/{key}` that validates the signed URL from T005. Register it only when `FILE_STORAGE=local`.
 
 **Acceptance**:
-- [ ] `uv run uvicorn docu.api.app:create_app --factory` starts, and `curl localhost:8000/v1/health` returns `{"ok":true,...}`
-- [ ] `/v1/ready` returns 503 when Redis is stopped
-- [ ] The test with an httpx `AsyncClient` passes
+- [x] `uv run uvicorn docu.api.app:create_app --factory` starts, and `curl localhost:8000/v1/health` returns `{"ok":true,...}`
+- [x] `/v1/ready` returns 503 when Redis is stopped
+- [x] The test with an httpx `AsyncClient` passes
 
 **Verify**: `uv run pytest tests/integration/test_health.py -q -m "db or redis"`
 

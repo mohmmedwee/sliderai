@@ -32,7 +32,7 @@
   - Vite, Tailwind 4, react-router 7, TanStack Query, i18next with `en.json` and `ar.json`
   - AppShell, NavRail, LanguageToggle, ConfirmDialog, `useTheme`, `useLocalSetting`
   - a dev proxy from `/v1` and `/s` to `:8000`
-- [ ] [T008](tasks/phase-01-setup.md#t008) [P] Scaffold the FastAPI app factory: health, readiness, lifespan, and serving `web/dist` in single-host mode (as in `MA/src/agent_console/main.py`), in `BE/api/app.py`
+- [x] [T008](tasks/phase-01-setup.md#t008) [P] Scaffold the FastAPI app factory: health, readiness, lifespan, and serving `web/dist` in single-host mode (as in `MA/src/agent_console/main.py`), in `BE/api/app.py`
 - [ ] [T009](tasks/phase-01-setup.md#t009) [P] Scaffold Celery with queues `turns`, `files`, `exports`, and `default`, routing, and beat, in `BE/worker/celery_app.py`
 - [ ] [T010](tasks/phase-01-setup.md#t010) [P] Port `scripts/check_endpoint.py`, which checks a plain reply, `tool_calls`, and `tool_calls` while streaming, to `BE/scripts/check_endpoint.py`
 - [ ] [T011](tasks/phase-01-setup.md#t011) [P] Set up Playwright projects `en-desktop`, `ar-desktop`, `en-mobile`, `ar-mobile`, plus Vitest, in `frontend/apps/web/`
