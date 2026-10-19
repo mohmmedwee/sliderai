@@ -88,7 +88,7 @@ class DocumentState(ApiModel):
 5. Test: every code in the contract tables is present. Copy the codes into the test as literal lists so contract drift is caught.
 
 **Acceptance**:
-- [ ] The code lists match the contracts exactly
+- [x] The code lists match the contracts exactly
 
 **Verify**: `uv run pytest tests/unit/test_errors.py -q`
 
