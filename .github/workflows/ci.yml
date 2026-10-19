@@ -138,10 +138,11 @@ jobs:
           REDIS_URL: redis://localhost:6379/0
         run: uv run celery -A docu.worker.celery_app worker -Q turns,files,exports,default -l warning &
       - name: smoke
+        working-directory: frontend/apps/web
         env:
           PLAYWRIGHT_PORT: "5173"
           AGENT_FAKE_MODEL: "1"
-        run: pnpm test:e2e -- --project=en-desktop --project=ar-desktop
+        run: pnpm exec playwright test --project=en-desktop --project=ar-desktop
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
