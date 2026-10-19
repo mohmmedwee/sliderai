@@ -1,0 +1,73 @@
+# Single-host deploy. Fill .env. Do not commit secrets.
+name: docu-prod
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: infra/docker/api.Dockerfile
+    env_file:
+      path: ../backend/.env
+      required: false
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/v1/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  worker:
+    build:
+      context: ..
+      dockerfile: infra/docker/worker.Dockerfile
+    env_file:
+      path: ../backend/.env
+      required: false
+    depends_on:
+      - api
+
+  beat:
+    build:
+      context: ..
+      dockerfile: infra/docker/worker.Dockerfile
+    env_file:
+      path: ../backend/.env
+      required: false
+    command: ["uv", "run", "celery", "-A", "docu.worker.celery_app", "beat", "-l", "info"]
+    depends_on:
+      - api
+
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: docu
+      POSTGRES_PASSWORD: docu
+      POSTGRES_DB: docu
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U docu -d docu"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  clamav:
+    image: clamav/clamav:stable
+    platform: linux/amd64
+
+volumes:
+  pgdata:
