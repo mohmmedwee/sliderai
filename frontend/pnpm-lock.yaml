@@ -105,7 +105,11 @@ importers:
         specifier: ^7.10.0
         version: 7.13.0(typescript@6.0.3)
 
-  packages/slides: {}
+  packages/slides:
+    devDependencies:
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.7(@types/node@24.19.2)(jiti@2.7.0)(jsdom@27.4.0(supports-color@10.2.2))(lightningcss@1.33.0)(supports-color@10.2.2)
 
 packages:
 

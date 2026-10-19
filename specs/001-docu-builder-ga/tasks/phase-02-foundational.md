@@ -274,9 +274,9 @@ export function Slide(props: SlideProps): JSX.Element
 6. `BT/unit/test_themes.py`: the JSON validates against `Theme`, the ids are unique, and contrast passes.
 
 **Acceptance**:
-- [ ] 26 themes, all passing contrast
-- [ ] `NOTICE` has the Apache attribution
-- [ ] Only one JSON file is edited by hand
+- [x] 26 themes, all passing contrast
+- [x] `NOTICE` has the Apache attribution
+- [x] Only one JSON file is edited by hand
 
 **Verify**: `uv run pytest tests/unit/test_themes.py -q && pnpm --filter slides test`
 

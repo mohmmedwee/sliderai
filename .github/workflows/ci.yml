@@ -84,7 +84,7 @@ jobs:
           REDIS_URL: redis://localhost:6379/0
         run: uv run uvicorn docu.api.app:create_app --factory --port 8000 &
       - run: pnpm gen:api
-      - run: git diff --exit-code frontend/packages/api-types
+      - run: git diff --exit-code frontend/packages/api-types frontend/packages/slides/src/generated/themes.json
         working-directory: .
 
   e2e:

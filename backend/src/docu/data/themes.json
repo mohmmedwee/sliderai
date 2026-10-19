@@ -1,0 +1,408 @@
+[
+  {
+    "id": "paper",
+    "name": "Paper",
+    "tokens": {
+      "bg": "#f4f1ea",
+      "paper": "#ffffff",
+      "ink": "#1d1b16",
+      "accent": "#2f2a22",
+      "tone": "light",
+      "font": "sans"
+    },
+    "tags": [
+      "neutral"
+    ]
+  },
+  {
+    "id": "ink",
+    "name": "Ink",
+    "tokens": {
+      "bg": "#0e0e10",
+      "paper": "#18181b",
+      "ink": "#f4f4f5",
+      "accent": "#e4e4e7",
+      "tone": "dark",
+      "font": "sans"
+    },
+    "tags": [
+      "dark",
+      "neutral"
+    ]
+  },
+  {
+    "id": "cobalt",
+    "name": "Cobalt",
+    "tokens": {
+      "bg": "#e8ecf8",
+      "paper": "#ffffff",
+      "ink": "#0d1b4c",
+      "accent": "#1f3fff",
+      "tone": "light",
+      "font": "sans"
+    },
+    "tags": [
+      "blue"
+    ]
+  },
+  {
+    "id": "midnight",
+    "name": "Midnight",
+    "tokens": {
+      "bg": "#0b1230",
+      "paper": "#121a3d",
+      "ink": "#e9ecff",
+      "accent": "#7c8cff",
+      "tone": "dark",
+      "font": "sans"
+    },
+    "tags": [
+      "blue",
+      "dark"
+    ]
+  },
+  {
+    "id": "forest",
+    "name": "Forest",
+    "tokens": {
+      "bg": "#0f3b2e",
+      "paper": "#13473a",
+      "ink": "#eef6ef",
+      "accent": "#e8b86a",
+      "tone": "dark",
+      "font": "sans"
+    },
+    "tags": [
+      "green",
+      "dark"
+    ]
+  },
+  {
+    "id": "mint",
+    "name": "Mint",
+    "tokens": {
+      "bg": "#e3f6ef",
+      "paper": "#ffffff",
+      "ink": "#103a2c",
+      "accent": "#16a37a",
+      "tone": "light",
+      "font": "sans"
+    },
+    "tags": [
+      "green"
+    ]
+  },
+  {
+    "id": "ember",
+    "name": "Ember",
+    "tokens": {
+      "bg": "#c8331f",
+      "paper": "#fff5ef",
+      "ink": "#2a0d07",
+      "accent": "#c8331f",
+      "tone": "light",
+      "font": "serif"
+    },
+    "tags": [
+      "red",
+      "orange"
+    ]
+  },
+  {
+    "id": "clay",
+    "name": "Clay",
+    "tokens": {
+      "bg": "#e9dccb",
+      "paper": "#f8f2ea",
+      "ink": "#3b2a1c",
+      "accent": "#b0643a",
+      "tone": "light",
+      "font": "serif"
+    },
+    "tags": [
+      "orange",
+      "neutral"
+    ]
+  },
+  {
+    "id": "saffron",
+    "name": "Saffron",
+    "tokens": {
+      "bg": "#fff3cf",
+      "paper": "#fffaf0",
+      "ink": "#3a2a00",
+      "accent": "#b07d00",
+      "tone": "light",
+      "font": "sans"
+    },
+    "tags": [
+      "yellow"
+    ]
+  },
+  {
+    "id": "plum",
+    "name": "Plum",
+    "tokens": {
+      "bg": "#1b1030",
+      "paper": "#24163f",
+      "ink": "#f2eaff",
+      "accent": "#b98bff",
+      "tone": "dark",
+      "font": "sans"
+    },
+    "tags": [
+      "purple",
+      "dark"
+    ]
+  },
+  {
+    "id": "lilac",
+    "name": "Lilac",
+    "tokens": {
+      "bg": "#ece6f7",
+      "paper": "#ffffff",
+      "ink": "#2a1d47",
+      "accent": "#7b4fd8",
+      "tone": "light",
+      "font": "sans"
+    },
+    "tags": [
+      "purple"
+    ]
+  },
+  {
+    "id": "rose",
+    "name": "Rose",
+    "tokens": {
+      "bg": "#fbe7ee",
+      "paper": "#fffafb",
+      "ink": "#4a1428",
+      "accent": "#d6336c",
+      "tone": "light",
+      "font": "serif"
+    },
+    "tags": [
+      "pink"
+    ]
+  },
+  {
+    "id": "slate",
+    "name": "Slate",
+    "tokens": {
+      "bg": "#2a2d34",
+      "paper": "#33373f",
+      "ink": "#eceff4",
+      "accent": "#f2c94c",
+      "tone": "dark",
+      "font": "sans"
+    },
+    "tags": [
+      "dark",
+      "yellow"
+    ]
+  },
+  {
+    "id": "harbor",
+    "name": "Harbor",
+    "tokens": {
+      "bg": "#d9e4ea",
+      "paper": "#f7fafc",
+      "ink": "#13293d",
+      "accent": "#e4572e",
+      "tone": "light",
+      "font": "sans"
+    },
+    "tags": [
+      "blue",
+      "orange"
+    ]
+  },
+  {
+    "id": "lagoon",
+    "name": "Lagoon",
+    "tokens": {
+      "bg": "#d8f3f1",
+      "paper": "#ffffff",
+      "ink": "#0c3b3a",
+      "accent": "#0f9d94",
+      "tone": "light",
+      "font": "sans"
+    },
+    "tags": [
+      "green",
+      "blue"
+    ]
+  },
+  {
+    "id": "noir",
+    "name": "Noir",
+    "tokens": {
+      "bg": "#000000",
+      "paper": "#0d0d0d",
+      "ink": "#ffffff",
+      "accent": "#ffe14d",
+      "tone": "dark",
+      "font": "serif"
+    },
+    "tags": [
+      "dark",
+      "yellow"
+    ]
+  },
+  {
+    "id": "tf-arctic-frost",
+    "name": "Arctic Frost",
+    "tokens": {
+      "bg": "#d4e4f7",
+      "paper": "#fafafa",
+      "ink": "#4a6fa5",
+      "accent": "#4a6fa5",
+      "tone": "light",
+      "font": "sans"
+    },
+    "tags": [
+      "blue"
+    ]
+  },
+  {
+    "id": "tf-botanical-garden",
+    "name": "Botanical Garden",
+    "tokens": {
+      "bg": "#f5f3ed",
+      "paper": "#ffffff",
+      "ink": "#4a7c59",
+      "accent": "#b7472a",
+      "tone": "light",
+      "font": "serif"
+    },
+    "tags": [
+      "green",
+      "orange"
+    ]
+  },
+  {
+    "id": "tf-desert-rose",
+    "name": "Desert Rose",
+    "tokens": {
+      "bg": "#3d1e2e",
+      "paper": "#5d2e46",
+      "ink": "#e8d5c4",
+      "accent": "#b87d6d",
+      "tone": "dark",
+      "font": "sans"
+    },
+    "tags": [
+      "pink"
+    ]
+  },
+  {
+    "id": "tf-forest-canopy",
+    "name": "Forest Canopy",
+    "tokens": {
+      "bg": "#a4ac86",
+      "paper": "#faf9f6",
+      "ink": "#2d4a2b",
+      "accent": "#7d8471",
+      "tone": "light",
+      "font": "serif"
+    },
+    "tags": [
+      "green"
+    ]
+  },
+  {
+    "id": "tf-golden-hour",
+    "name": "Golden Hour",
+    "tokens": {
+      "bg": "#2e2824",
+      "paper": "#4a403a",
+      "ink": "#d4b896",
+      "accent": "#f4a900",
+      "tone": "dark",
+      "font": "sans"
+    },
+    "tags": [
+      "yellow",
+      "orange"
+    ]
+  },
+  {
+    "id": "tf-midnight-galaxy",
+    "name": "Midnight Galaxy",
+    "tokens": {
+      "bg": "#1a1228",
+      "paper": "#2b1e3e",
+      "ink": "#e6e6fa",
+      "accent": "#a490c2",
+      "tone": "dark",
+      "font": "sans"
+    },
+    "tags": [
+      "purple",
+      "dark"
+    ]
+  },
+  {
+    "id": "tf-modern-minimalist",
+    "name": "Modern Minimalist",
+    "tokens": {
+      "bg": "#d3d3d3",
+      "paper": "#ffffff",
+      "ink": "#36454f",
+      "accent": "#708090",
+      "tone": "light",
+      "font": "sans"
+    },
+    "tags": [
+      "neutral"
+    ]
+  },
+  {
+    "id": "tf-ocean-depths",
+    "name": "Ocean Depths",
+    "tokens": {
+      "bg": "#121820",
+      "paper": "#1a2332",
+      "ink": "#f1faee",
+      "accent": "#2d8b8b",
+      "tone": "dark",
+      "font": "sans"
+    },
+    "tags": [
+      "blue",
+      "dark"
+    ]
+  },
+  {
+    "id": "tf-sunset-boulevard",
+    "name": "Sunset Boulevard",
+    "tokens": {
+      "bg": "#1a3038",
+      "paper": "#264653",
+      "ink": "#e9c46a",
+      "accent": "#e76f51",
+      "tone": "dark",
+      "font": "serif"
+    },
+    "tags": [
+      "orange",
+      "dark"
+    ]
+  },
+  {
+    "id": "tf-tech-innovation",
+    "name": "Tech Innovation",
+    "tokens": {
+      "bg": "#121212",
+      "paper": "#1e1e1e",
+      "ink": "#ffffff",
+      "accent": "#0066ff",
+      "tone": "dark",
+      "font": "sans"
+    },
+    "tags": [
+      "blue",
+      "dark"
+    ]
+  }
+]
