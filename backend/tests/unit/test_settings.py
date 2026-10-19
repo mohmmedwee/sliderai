@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 from pydantic import ValidationError
 
@@ -37,7 +39,8 @@ def test_upstream_env(monkeypatch: pytest.MonkeyPatch) -> None:
     assert settings.prompts.dir.name == "prompts"
 
 
-def test_missing_secret_key_raises(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_missing_secret_key_raises(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
+    monkeypatch.chdir(tmp_path)
     monkeypatch.delenv("SECRET_KEY", raising=False)
     clear_settings()
     with pytest.raises(ValidationError):
