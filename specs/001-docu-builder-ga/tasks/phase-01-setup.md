@@ -161,10 +161,10 @@ Before any card, read [IMPLEMENTER.md](../IMPLEMENTER.md). It defines the abbrev
 4. Port `MA/tests/test_prompts.py` and adapt the imports.
 
 **Acceptance**:
-- [ ] `load_prompt("date_context", today="Monday")` substitutes the value (using a test fixture prompt dir)
-- [ ] Missing variables stay as `{name}` and don't raise
-- [ ] The override resolver wins over the file when set
-- [ ] Tests pass
+- [x] `load_prompt("date_context", today="Monday")` substitutes the value (using a test fixture prompt dir)
+- [x] Missing variables stay as `{name}` and don't raise
+- [x] The override resolver wins over the file when set
+- [x] Tests pass
 
 **Verify**: `uv run pytest tests/unit/test_prompts.py -q`
 

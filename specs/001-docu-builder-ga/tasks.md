@@ -25,7 +25,7 @@
 - [x] [T001](tasks/phase-01-setup.md#t001) Create the repo layout from plan.md: `backend/` (uv project `docu`, `src/` layout, `prompts/`, `skills/`), `frontend/` (pnpm workspace: `apps/web`, `packages/{slides,api-types}`), `evals/`, and `infra/`
 - [x] [T002](tasks/phase-01-setup.md#t002) [P] Set up backend tooling: ruff (MA rule set), mypy strict, pytest with MA's markers (`db`, `slow`, `e2e_*`), pre-commit, in `backend/pyproject.toml`
 - [x] [T003](tasks/phase-01-setup.md#t003) [P] Port settings with MA's env names (`UPSTREAM`, `UPSTREAM_API_KEY`, `MODEL`, `VISION_MODEL`, `CONTEXT_WINDOW`, `MAX_COMPLETION_TOKENS`, `ENABLE_THINKING`, `SECRET_KEY`, `FIRST_USER_IS_ADMIN`, …) and its nested settings and hoist pattern from `MA/src/agent_console/config/`, into `BE/core/config.py`. Also port `ENV.md` and `.env.example`.
-- [ ] [T004](tasks/phase-01-setup.md#t004) [P] Port the prompts loader (`load_prompt` with variables, cached per process) from `MA/src/agent_console/prompts.py` to `BE/core/prompts.py`
+- [x] [T004](tasks/phase-01-setup.md#t004) [P] Port the prompts loader (`load_prompt` with variables, cached per process) from `MA/src/agent_console/prompts.py` to `BE/core/prompts.py`
 - [ ] [T005](tasks/phase-01-setup.md#t005) [P] Port `BlobStore` (Protocol, Local, S3) from `MA/src/agent_console/storage/blob_store.py` to `BE/storage/blob_store.py`, with its tests
 - [ ] [T006](tasks/phase-01-setup.md#t006) [P] Create the local stack (Postgres 16 + pgvector, Redis 7, MinIO, Mailpit, ClamAV) in `infra/compose.yaml`
 - [ ] [T007](tasks/phase-01-setup.md#t007) [P] Port the frontend base from `MA/frontend` into `frontend/apps/web`:
