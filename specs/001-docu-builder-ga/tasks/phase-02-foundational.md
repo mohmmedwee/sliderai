@@ -348,7 +348,7 @@ export function Slide(props: SlideProps): JSX.Element
 
 **Acceptance**:
 - [x] Every column in data-model.md exists with the right type and nullability
-- [ ] `uv run alembic revision --autogenerate` (in T024) produces the tables with no surprises
+- [x] `uv run alembic revision --autogenerate` (in T024) produces the tables with no surprises
 - [x] `mypy --strict` is clean
 
 **Verify**: `uv run python -c "import docu.db.models as m; print(len(m.Base.metadata.tables))"` prints 18 or more
@@ -416,8 +416,8 @@ CREATE POLICY tenant_isolation ON {t}
 4. `downgrade()` drops everything in reverse order.
 
 **Acceptance**:
-- [ ] `uv run alembic upgrade head` on an empty DB succeeds, and `alembic downgrade base` succeeds
-- [ ] `\d+ documents` in psql shows "Policies: tenant_isolation" and "Force row security"
+- [x] `uv run alembic upgrade head` on an empty DB succeeds, and `alembic downgrade base` succeeds
+- [x] `\d+ documents` in psql shows "Policies: tenant_isolation" and "Force row security"
 
 **Verify**: `uv run alembic upgrade head && uv run alembic downgrade base && uv run alembic upgrade head`
 
