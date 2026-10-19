@@ -322,7 +322,7 @@ Before any card, read [IMPLEMENTER.md](../IMPLEMENTER.md). It defines the abbrev
 
 **Acceptance**:
 - [ ] `uv run python -m docu.scripts.check_endpoint` against a working upstream prints three ✓ and exits 0
-- [ ] With a wrong key it prints ✗ with a short reason and exits 1
+- [x] With a wrong key it prints ✗ with a short reason and exits 1
 
 **Verify**: run it manually (it needs a real upstream, so it is not in CI)
 

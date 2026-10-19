@@ -51,6 +51,11 @@ class LlmSettings(BaseModel):
     fallback_api_key: str = Field(default="")
     provider: Literal["openai", "anthropic"] = "openai"
 
+    @property
+    def api_key(self) -> str:
+        """Alias used by endpoint checks. The env name stays ``UPSTREAM_API_KEY``."""
+        return self.upstream_api_key
+
     @field_validator("upstream")
     @classmethod
     def _strip_upstream_slash(cls, value: str) -> str:
